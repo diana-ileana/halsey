@@ -1,0 +1,825 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.FlowLayout;
+import javax.swing.JSplitPane;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+import javax.swing.JPasswordField;
+import javax.swing.JButton;
+import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
+import javax.swing.Action;
+import java.awt.event.ActionListener;
+import java.util.Random;
+
+public class login {
+
+	private JFrame frame;
+	private JTextField Username;
+	private JPasswordField password;
+	private final Action action = new SwingAction();
+	private final Action action_1 = new SwingAction_1();
+	private JButton btnLogin;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					login window = new login();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public login() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblUsername = new JLabel("Username");
+		lblUsername.setBounds(51, 90, 73, 25);
+		frame.getContentPane().add(lblUsername);
+		
+		Username = new JTextField();
+		Username.setBounds(131, 92, 191, 20);
+		frame.getContentPane().add(Username);
+		Username.setColumns(10);
+		
+		JLabel lblPassword = new JLabel("Password");
+		lblPassword.setBounds(51, 126, 70, 14);
+		frame.getContentPane().add(lblPassword);
+		
+		password = new JPasswordField();
+		password.setBounds(131, 123, 191, 20);
+		frame.getContentPane().add(password);
+		
+		btnLogin = new JButton("Login");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String uname=Username.getText();
+				String pass=password.getText();
+				
+				if(uname.equals("name") && pass.equals("pass"))
+				{
+					JOptionPane.showMessageDialog(frame,"you are sucessfully logined");
+					
+					secondbox second=new secondbox();
+					second.setVisible(true);
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(frame,"invalid username or password");
+				}
+			}
+		});
+		btnLogin.setBounds(163, 169, 89, 23);
+		frame.getContentPane().add(btnLogin);
+	}
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "SwingAction");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}
+	}
+	private class SwingAction_1 extends AbstractAction {
+		public SwingAction_1() {
+			putValue(NAME, "SwingAction_1");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}
+	}
+}
+///second box
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JComboBox;
+import javax.swing.JTextPane;
+import javax.swing.JSeparator;
+import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
+import com.jgoodies.forms.factories.DefaultComponentFactory;
+import java.awt.Component;
+import javax.swing.Box;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.BoxLayout;
+import javax.swing.UIManager;
+import java.awt.SystemColor;
+
+public class secondbox extends JFrame {
+
+	protected static final String panel = null;
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					secondbox frame = new secondbox();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+
+	/**
+	 * Create the frame.
+	 */
+	public secondbox() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 610, 539);
+		contentPane = new JPanel();
+		contentPane.setForeground(Color.BLACK);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JTextPane textPane = new JTextPane();
+		textPane.setBackground(SystemColor.activeCaptionBorder);
+		textPane.setForeground(Color.BLACK);
+		textPane.setBounds(28, 24, 42, 20);
+		contentPane.add(textPane);
+		
+		JTextPane textPane_1 = new JTextPane();
+		textPane_1.setBackground(SystemColor.activeCaptionBorder);
+		textPane_1.setBounds(73, 24, 42, 20);
+		contentPane.add(textPane_1);
+		
+		JTextPane textPane_2 = new JTextPane();
+		textPane_2.setBackground(SystemColor.activeCaptionBorder);
+		textPane_2.setBounds(117, 24, 42, 20);
+		contentPane.add(textPane_2);
+		
+		JTextPane textPane_3 = new JTextPane();
+		textPane_3.setBackground(SystemColor.activeCaptionBorder);
+		textPane_3.setBounds(161, 24, 42, 20);
+		contentPane.add(textPane_3);
+		
+		JTextPane textPane_4 = new JTextPane();
+		textPane_4.setBackground(SystemColor.activeCaptionBorder);
+		textPane_4.setBounds(207, 24, 42, 20);
+		contentPane.add(textPane_4);
+		
+		JTextPane textPane_5 = new JTextPane();
+		textPane_5.setBackground(SystemColor.activeCaptionBorder);
+		textPane_5.setBounds(252, 24, 42, 20);
+		contentPane.add(textPane_5);
+		
+		JTextPane textPane_6 = new JTextPane();
+		textPane_6.setBackground(SystemColor.activeCaptionBorder);
+		textPane_6.setBounds(296, 24, 42, 20);
+		contentPane.add(textPane_6);
+		
+		JTextPane textPane_7 = new JTextPane();
+		textPane_7.setBackground(SystemColor.activeCaptionBorder);
+		textPane_7.setBounds(341, 24, 42, 20);
+		contentPane.add(textPane_7);
+		
+		JTextPane textPane_8 = new JTextPane();
+		textPane_8.setBackground(SystemColor.activeCaptionBorder);
+		textPane_8.setBounds(385, 24, 42, 20);
+		contentPane.add(textPane_8);
+		
+		JTextPane textPane_9 = new JTextPane();
+		textPane_9.setBackground(SystemColor.activeCaptionBorder);
+		textPane_9.setBounds(431, 24, 48, 20);
+		contentPane.add(textPane_9);
+		
+		JTextPane textPane_10 = new JTextPane();
+		textPane_10.setBackground(SystemColor.activeCaptionBorder);
+		textPane_10.setBounds(28, 48, 42, 26);
+		contentPane.add(textPane_10);
+		
+		JTextPane textPane_11 = new JTextPane();
+		textPane_11.setBackground(SystemColor.activeCaptionBorder);
+		textPane_11.setBounds(73, 48, 42, 26);
+		contentPane.add(textPane_11);
+		
+		JTextPane textPane_12 = new JTextPane();
+		textPane_12.setBackground(SystemColor.activeCaptionBorder);
+		textPane_12.setBounds(117, 48, 42, 26);
+		contentPane.add(textPane_12);
+		
+		JTextPane textPane_13 = new JTextPane();
+		textPane_13.setBackground(SystemColor.activeCaptionBorder);
+		textPane_13.setBounds(161, 48, 42, 26);
+		contentPane.add(textPane_13);
+		
+		JTextPane textPane_14 = new JTextPane();
+		textPane_14.setBackground(SystemColor.activeCaptionBorder);
+		textPane_14.setBounds(207, 48, 42, 26);
+		contentPane.add(textPane_14);
+		
+		JTextPane textPane_15 = new JTextPane();
+		textPane_15.setBackground(SystemColor.activeCaptionBorder);
+		textPane_15.setBounds(250, 48, 44, 26);
+		contentPane.add(textPane_15);
+		
+		JTextPane textPane_16 = new JTextPane();
+		textPane_16.setBackground(SystemColor.activeCaptionBorder);
+		textPane_16.setBounds(296, 48, 42, 26);
+		contentPane.add(textPane_16);
+		
+		JTextPane textPane_17 = new JTextPane();
+		textPane_17.setBackground(SystemColor.activeCaptionBorder);
+		textPane_17.setBounds(341, 48, 42, 26);
+		contentPane.add(textPane_17);
+		
+		JTextPane textPane_18 = new JTextPane();
+		textPane_18.setBackground(SystemColor.activeCaptionBorder);
+		textPane_18.setBounds(431, 48, 48, 27);
+		contentPane.add(textPane_18);
+		
+		JTextPane textPane_19 = new JTextPane();
+		textPane_19.setBackground(Color.DARK_GRAY);
+		textPane_19.setBounds(385, 48, 42, 27);
+		contentPane.add(textPane_19);
+		
+		JTextPane textPane_20 = new JTextPane();
+		textPane_20.setBackground(SystemColor.activeCaptionBorder);
+		textPane_20.setBounds(28, 77, 43, 26);
+		contentPane.add(textPane_20);
+		
+		JTextPane textPane_21 = new JTextPane();
+		textPane_21.setBackground(SystemColor.activeCaptionBorder);
+		textPane_21.setBounds(73, 77, 42, 26);
+		contentPane.add(textPane_21);
+		
+		JTextPane textPane_22 = new JTextPane();
+		textPane_22.setBackground(SystemColor.activeCaptionBorder);
+		textPane_22.setBounds(117, 77, 42, 26);
+		contentPane.add(textPane_22);
+		
+		JTextPane textPane_23 = new JTextPane();
+		textPane_23.setBackground(Color.BLACK);
+		textPane_23.setBounds(161, 77, 42, 26);
+		contentPane.add(textPane_23);
+		
+		JTextPane textPane_24 = new JTextPane();
+		textPane_24.setBackground(SystemColor.activeCaptionBorder);
+		textPane_24.setBounds(207, 77, 42, 26);
+		contentPane.add(textPane_24);
+		
+		JTextPane textPane_25 = new JTextPane();
+		textPane_25.setBackground(SystemColor.activeCaptionBorder);
+		textPane_25.setBounds(252, 77, 42, 26);
+		contentPane.add(textPane_25);
+		
+		JTextPane textPane_26 = new JTextPane();
+		textPane_26.setBackground(SystemColor.activeCaptionBorder);
+		textPane_26.setBounds(296, 77, 42, 26);
+		contentPane.add(textPane_26);
+		
+		JTextPane textPane_27 = new JTextPane();
+		textPane_27.setBackground(SystemColor.activeCaptionBorder);
+		textPane_27.setBounds(341, 77, 42, 26);
+		contentPane.add(textPane_27);
+		
+		JTextPane textPane_28 = new JTextPane();
+		textPane_28.setBackground(SystemColor.activeCaptionBorder);
+		textPane_28.setBounds(385, 77, 42, 26);
+		contentPane.add(textPane_28);
+		
+		JTextPane textPane_29 = new JTextPane();
+		textPane_29.setBackground(SystemColor.activeCaptionBorder);
+		textPane_29.setBounds(431, 77, 48, 26);
+		contentPane.add(textPane_29);
+		
+		JTextPane textPane_30 = new JTextPane();
+		textPane_30.setBackground(SystemColor.activeCaptionBorder);
+		textPane_30.setBounds(28, 104, 42, 26);
+		contentPane.add(textPane_30);
+		
+		JTextPane textPane_31 = new JTextPane();
+		textPane_31.setBackground(SystemColor.activeCaptionBorder);
+		textPane_31.setBounds(73, 104, 42, 26);
+		contentPane.add(textPane_31);
+		
+		JTextPane textPane_32 = new JTextPane();
+		textPane_32.setBackground(SystemColor.activeCaptionBorder);
+		textPane_32.setBounds(117, 104, 42, 26);
+		contentPane.add(textPane_32);
+		
+		JTextPane textPane_33 = new JTextPane();
+		textPane_33.setBackground(SystemColor.activeCaptionBorder);
+		textPane_33.setBounds(161, 104, 42, 26);
+		contentPane.add(textPane_33);
+		
+		JTextPane textPane_34 = new JTextPane();
+		textPane_34.setBackground(SystemColor.activeCaptionBorder);
+		textPane_34.setBounds(207, 104, 42, 26);
+		contentPane.add(textPane_34);
+		
+		JTextPane textPane_35 = new JTextPane();
+		textPane_35.setBackground(SystemColor.activeCaptionBorder);
+		textPane_35.setBounds(252, 104, 42, 26);
+		contentPane.add(textPane_35);
+		
+		JTextPane textPane_36 = new JTextPane();
+		textPane_36.setBackground(Color.LIGHT_GRAY);
+		textPane_36.setBounds(296, 104, 42, 26);
+		contentPane.add(textPane_36);
+		
+		JTextPane textPane_37 = new JTextPane();
+		textPane_37.setBackground(Color.DARK_GRAY);
+		textPane_37.setBounds(341, 104, 42, 26);
+		contentPane.add(textPane_37);
+		
+		JTextPane textPane_38 = new JTextPane();
+		textPane_38.setBackground(SystemColor.activeCaptionBorder);
+		textPane_38.setBounds(385, 104, 42, 26);
+		contentPane.add(textPane_38);
+		
+		JTextPane textPane_39 = new JTextPane();
+		textPane_39.setBackground(SystemColor.activeCaptionBorder);
+		textPane_39.setBounds(431, 104, 48, 26);
+		contentPane.add(textPane_39);
+		
+		JTextPane textPane_40 = new JTextPane();
+		textPane_40.setBackground(SystemColor.activeCaptionBorder);
+		textPane_40.setBounds(28, 131, 42, 26);
+		contentPane.add(textPane_40);
+		
+		JTextPane textPane_41 = new JTextPane();
+		textPane_41.setBackground(SystemColor.desktop);
+		textPane_41.setBounds(73, 131, 42, 26);
+		contentPane.add(textPane_41);
+		
+		JTextPane textPane_42 = new JTextPane();
+		textPane_42.setBackground(SystemColor.activeCaptionBorder);
+		textPane_42.setBounds(117, 131, 42, 26);
+		contentPane.add(textPane_42);
+		
+		JTextPane textPane_43 = new JTextPane();
+		textPane_43.setBackground(SystemColor.activeCaptionBorder);
+		textPane_43.setBounds(161, 131, 42, 26);
+		contentPane.add(textPane_43);
+		
+		JTextPane textPane_44 = new JTextPane();
+		textPane_44.setBackground(SystemColor.activeCaptionBorder);
+		textPane_44.setBounds(207, 131, 42, 26);
+		contentPane.add(textPane_44);
+		
+		JTextPane textPane_45 = new JTextPane();
+		textPane_45.setBackground(SystemColor.activeCaptionBorder);
+		textPane_45.setBounds(252, 131, 42, 26);
+		contentPane.add(textPane_45);
+		
+		JTextPane textPane_46 = new JTextPane();
+		textPane_46.setBackground(SystemColor.desktop);
+		textPane_46.setBounds(296, 131, 42, 26);
+		contentPane.add(textPane_46);
+		
+		JTextPane textPane_47 = new JTextPane();
+		textPane_47.setBackground(SystemColor.activeCaptionBorder);
+		textPane_47.setBounds(341, 131, 42, 27);
+		contentPane.add(textPane_47);
+		
+		JTextPane textPane_48 = new JTextPane();
+		textPane_48.setBackground(SystemColor.activeCaptionBorder);
+		textPane_48.setBounds(385, 131, 42, 26);
+		contentPane.add(textPane_48);
+		
+		JTextPane textPane_49 = new JTextPane();
+		textPane_49.setBackground(SystemColor.activeCaptionBorder);
+		textPane_49.setBounds(431, 131, 48, 27);
+		contentPane.add(textPane_49);
+		
+		JTextPane textPane_50 = new JTextPane();
+		textPane_50.setBackground(SystemColor.desktop);
+		textPane_50.setBounds(28, 159, 42, 26);
+		contentPane.add(textPane_50);
+		
+		JTextPane textPane_51 = new JTextPane();
+		textPane_51.setBackground(SystemColor.desktop);
+		textPane_51.setBounds(385, 159, 42, 26);
+		contentPane.add(textPane_51);
+		
+		JTextPane textPane_52 = new JTextPane();
+		textPane_52.setBackground(SystemColor.activeCaptionBorder);
+		textPane_52.setBounds(431, 159, 48, 26);
+		contentPane.add(textPane_52);
+		
+		JTextPane textPane_53 = new JTextPane();
+		textPane_53.setBackground(SystemColor.activeCaptionBorder);
+		textPane_53.setBounds(161, 159, 42, 26);
+		contentPane.add(textPane_53);
+		
+		JTextPane textPane_54 = new JTextPane();
+		textPane_54.setBackground(SystemColor.activeCaptionBorder);
+		textPane_54.setBounds(252, 159, 42, 26);
+		contentPane.add(textPane_54);
+		
+		JTextPane textPane_55 = new JTextPane();
+		textPane_55.setBackground(SystemColor.activeCaptionBorder);
+		textPane_55.setBounds(341, 159, 42, 26);
+		contentPane.add(textPane_55);
+		
+		JTextPane textPane_56 = new JTextPane();
+		textPane_56.setBackground(SystemColor.activeCaptionBorder);
+		textPane_56.setBounds(73, 159, 42, 26);
+		contentPane.add(textPane_56);
+		
+		JTextPane textPane_57 = new JTextPane();
+		textPane_57.setBackground(SystemColor.activeCaptionBorder);
+		textPane_57.setBounds(117, 159, 42, 26);
+		contentPane.add(textPane_57);
+		
+		JTextPane textPane_58 = new JTextPane();
+		textPane_58.setBackground(SystemColor.activeCaptionBorder);
+		textPane_58.setBounds(207, 159, 42, 26);
+		contentPane.add(textPane_58);
+		
+		JTextPane textPane_59 = new JTextPane();
+		textPane_59.setBackground(SystemColor.activeCaptionBorder);
+		textPane_59.setBounds(296, 159, 42, 26);
+		contentPane.add(textPane_59);
+		
+		JTextPane textPane_60 = new JTextPane();
+		textPane_60.setBackground(SystemColor.desktop);
+		textPane_60.setBounds(431, 189, 48, 26);
+		contentPane.add(textPane_60);
+		
+		JTextPane textPane_61 = new JTextPane();
+		textPane_61.setBackground(SystemColor.activeCaptionBorder);
+		textPane_61.setBounds(385, 189, 42, 26);
+		contentPane.add(textPane_61);
+		
+		JTextPane textPane_62 = new JTextPane();
+		textPane_62.setBackground(SystemColor.activeCaptionBorder);
+		textPane_62.setBounds(28, 189, 42, 26);
+		contentPane.add(textPane_62);
+		
+		JTextPane textPane_63 = new JTextPane();
+		textPane_63.setBackground(SystemColor.activeCaptionBorder);
+		textPane_63.setBounds(73, 189, 42, 26);
+		contentPane.add(textPane_63);
+		
+		JTextPane textPane_64 = new JTextPane();
+		textPane_64.setBackground(SystemColor.activeCaptionBorder);
+		textPane_64.setBounds(117, 189, 42, 26);
+		contentPane.add(textPane_64);
+		
+		JTextPane textPane_65 = new JTextPane();
+		textPane_65.setBackground(SystemColor.activeCaptionBorder);
+		textPane_65.setBounds(161, 189, 42, 26);
+		contentPane.add(textPane_65);
+		
+		JTextPane textPane_66 = new JTextPane();
+		textPane_66.setBackground(SystemColor.activeCaptionBorder);
+		textPane_66.setBounds(207, 189, 42, 26);
+		contentPane.add(textPane_66);
+		
+		JTextPane textPane_67 = new JTextPane();
+		textPane_67.setBackground(SystemColor.desktop);
+		textPane_67.setBounds(252, 189, 42, 26);
+		contentPane.add(textPane_67);
+		
+		JTextPane textPane_68 = new JTextPane();
+		textPane_68.setBackground(SystemColor.activeCaptionBorder);
+		textPane_68.setBounds(296, 189, 42, 27);
+		contentPane.add(textPane_68);
+		
+		JTextPane textPane_69 = new JTextPane();
+		textPane_69.setBackground(SystemColor.activeCaptionBorder);
+		textPane_69.setBounds(341, 189, 42, 26);
+		contentPane.add(textPane_69);
+		
+		JTextPane textPane_70 = new JTextPane();
+		textPane_70.setBackground(SystemColor.desktop);
+		textPane_70.setBounds(28, 218, 42, 26);
+		contentPane.add(textPane_70);
+		
+		JTextPane textPane_71 = new JTextPane();
+		textPane_71.setBackground(SystemColor.activeCaptionBorder);
+		textPane_71.setBounds(28, 249, 42, 26);
+		contentPane.add(textPane_71);
+		
+		JTextPane textPane_72 = new JTextPane();
+		textPane_72.setBackground(SystemColor.activeCaptionBorder);
+		textPane_72.setBounds(28, 280, 42, 27);
+		contentPane.add(textPane_72);
+		
+		JTextPane textPane_73 = new JTextPane();
+		textPane_73.setBackground(SystemColor.activeCaptionBorder);
+		textPane_73.setBounds(73, 280, 42, 26);
+		contentPane.add(textPane_73);
+		
+		JTextPane textPane_74 = new JTextPane();
+		textPane_74.setBackground(SystemColor.activeCaptionBorder);
+		textPane_74.setBounds(73, 218, 42, 26);
+		contentPane.add(textPane_74);
+		
+		JTextPane textPane_75 = new JTextPane();
+		textPane_75.setBackground(SystemColor.activeCaptionBorder);
+		textPane_75.setBounds(73, 249, 42, 26);
+		contentPane.add(textPane_75);
+		
+		JTextPane textPane_76 = new JTextPane();
+		textPane_76.setBackground(SystemColor.activeCaptionBorder);
+		textPane_76.setBounds(117, 218, 42, 26);
+		contentPane.add(textPane_76);
+		
+		JTextPane textPane_77 = new JTextPane();
+		textPane_77.setBackground(SystemColor.activeCaptionBorder);
+		textPane_77.setBounds(117, 249, 42, 26);
+		contentPane.add(textPane_77);
+		
+		JTextPane textPane_78 = new JTextPane();
+		textPane_78.setBackground(SystemColor.activeCaptionBorder);
+		textPane_78.setBounds(117, 280, 42, 26);
+		contentPane.add(textPane_78);
+		
+		JTextPane textPane_79 = new JTextPane();
+		textPane_79.setBackground(SystemColor.activeCaptionBorder);
+		textPane_79.setBounds(161, 218, 42, 26);
+		contentPane.add(textPane_79);
+		
+		JTextPane textPane_80 = new JTextPane();
+		textPane_80.setBackground(SystemColor.activeCaptionBorder);
+		textPane_80.setBounds(161, 249, 42, 26);
+		contentPane.add(textPane_80);
+		
+		JTextPane textPane_81 = new JTextPane();
+		textPane_81.setBackground(SystemColor.activeCaptionBorder);
+		textPane_81.setBounds(161, 280, 42, 26);
+		contentPane.add(textPane_81);
+		
+		JTextPane textPane_82 = new JTextPane();
+		textPane_82.setBackground(SystemColor.activeCaptionBorder);
+		textPane_82.setBounds(207, 218, 42, 26);
+		contentPane.add(textPane_82);
+		
+		JTextPane textPane_83 = new JTextPane();
+		textPane_83.setBackground(SystemColor.activeCaptionBorder);
+		textPane_83.setBounds(207, 249, 42, 26);
+		contentPane.add(textPane_83);
+		
+		JTextPane textPane_84 = new JTextPane();
+		textPane_84.setBackground(SystemColor.activeCaptionBorder);
+		textPane_84.setBounds(207, 280, 42, 27);
+		contentPane.add(textPane_84);
+		
+		JTextPane textPane_85 = new JTextPane();
+		textPane_85.setBackground(SystemColor.activeCaptionBorder);
+		textPane_85.setBounds(252, 218, 42, 26);
+		contentPane.add(textPane_85);
+		
+		JTextPane textPane_86 = new JTextPane();
+		textPane_86.setBackground(SystemColor.activeCaptionBorder);
+		textPane_86.setBounds(252, 249, 42, 27);
+		contentPane.add(textPane_86);
+		
+		JTextPane textPane_87 = new JTextPane();
+		textPane_87.setBackground(SystemColor.desktop);
+		textPane_87.setBounds(252, 280, 42, 26);
+		contentPane.add(textPane_87);
+		
+		JTextPane textPane_88 = new JTextPane();
+		textPane_88.setBackground(SystemColor.desktop);
+		textPane_88.setBounds(296, 218, 42, 26);
+		contentPane.add(textPane_88);
+		
+		JTextPane textPane_89 = new JTextPane();
+		textPane_89.setBackground(SystemColor.activeCaptionBorder);
+		textPane_89.setBounds(296, 249, 42, 26);
+		contentPane.add(textPane_89);
+		
+		JTextPane textPane_90 = new JTextPane();
+		textPane_90.setBackground(SystemColor.activeCaptionBorder);
+		textPane_90.setBounds(296, 280, 42, 26);
+		contentPane.add(textPane_90);
+		
+		JTextPane textPane_91 = new JTextPane();
+		textPane_91.setBackground(SystemColor.activeCaptionBorder);
+		textPane_91.setBounds(341, 218, 42, 26);
+		contentPane.add(textPane_91);
+		
+		JTextPane textPane_92 = new JTextPane();
+		textPane_92.setBackground(SystemColor.activeCaptionBorder);
+		textPane_92.setBounds(341, 249, 42, 26);
+		contentPane.add(textPane_92);
+		
+		JTextPane textPane_93 = new JTextPane();
+		textPane_93.setBackground(SystemColor.activeCaptionBorder);
+		textPane_93.setBounds(341, 280, 42, 26);
+		contentPane.add(textPane_93);
+		
+		JTextPane textPane_94 = new JTextPane();
+		textPane_94.setBackground(SystemColor.activeCaptionBorder);
+		textPane_94.setBounds(385, 218, 42, 26);
+		contentPane.add(textPane_94);
+		
+		JTextPane textPane_95 = new JTextPane();
+		textPane_95.setBackground(SystemColor.desktop);
+		textPane_95.setBounds(385, 249, 42, 26);
+		contentPane.add(textPane_95);
+		
+		JTextPane textPane_96 = new JTextPane();
+		textPane_96.setBackground(SystemColor.activeCaptionBorder);
+		textPane_96.setBounds(385, 280, 42, 26);
+		contentPane.add(textPane_96);
+		
+		JTextPane textPane_97 = new JTextPane();
+		textPane_97.setBackground(SystemColor.activeCaptionBorder);
+		textPane_97.setBounds(431, 218, 48, 26);
+		contentPane.add(textPane_97);
+		
+		JTextPane textPane_98 = new JTextPane();
+		textPane_98.setBackground(SystemColor.activeCaptionBorder);
+		textPane_98.setBounds(431, 280, 48, 26);
+		contentPane.add(textPane_98);
+		
+		JTextPane textPane_99 = new JTextPane();
+		textPane_99.setBackground(SystemColor.activeCaptionBorder);
+		textPane_99.setBounds(431, 249, 48, 26);
+		contentPane.add(textPane_99);
+		
+		JLabel label = new JLabel("         1");
+		label.setBounds(24, 11, 46, 14);
+		contentPane.add(label);
+		
+		JLabel label_1 = new JLabel("       2");
+		label_1.setBounds(73, 11, 46, 14);
+		contentPane.add(label_1);
+		
+		JLabel label_2 = new JLabel("        3");
+		label_2.setBounds(117, 11, 46, 14);
+		contentPane.add(label_2);
+		
+		JLabel label_3 = new JLabel("        4");
+		label_3.setBounds(161, 11, 46, 14);
+		contentPane.add(label_3);
+		
+		JLabel label_4 = new JLabel("      5");
+		label_4.setBounds(207, 11, 46, 14);
+		contentPane.add(label_4);
+		
+		JLabel label_5 = new JLabel("        6");
+		label_5.setBounds(248, 11, 46, 14);
+		contentPane.add(label_5);
+		
+		JLabel label_6 = new JLabel("        7");
+		label_6.setBounds(292, 11, 46, 14);
+		contentPane.add(label_6);
+		
+		JLabel label_7 = new JLabel("        8");
+		label_7.setBounds(341, 11, 46, 14);
+		contentPane.add(label_7);
+		
+		JLabel label_8 = new JLabel("        9");
+		label_8.setBounds(381, 11, 46, 14);
+		contentPane.add(label_8);
+		
+		JLabel label_9 = new JLabel("       10");
+		label_9.setBounds(431, 11, 46, 14);
+		contentPane.add(label_9);
+		
+		JLabel label_10 = new JLabel("         1");
+		label_10.setBounds(-12, 24, 46, 14);
+		contentPane.add(label_10);
+		
+		JLabel label_11 = new JLabel("       2");
+		label_11.setBounds(-2, 55, 46, 14);
+		contentPane.add(label_11);
+		
+		JLabel label_12 = new JLabel("         3");
+		label_12.setBounds(-12, 77, 46, 14);
+		contentPane.add(label_12);
+		
+		JLabel label_13 = new JLabel("          4");
+		label_13.setBounds(-12, 114, 46, 14);
+		contentPane.add(label_13);
+		
+		JLabel label_14 = new JLabel("          5");
+		label_14.setBounds(-12, 141, 46, 14);
+		contentPane.add(label_14);
+		
+		JLabel label_15 = new JLabel("           6");
+		label_15.setBounds(-12, 168, 46, 14);
+		contentPane.add(label_15);
+		
+		JLabel label_16 = new JLabel("       7");
+		label_16.setBounds(-2, 196, 46, 14);
+		contentPane.add(label_16);
+		
+		JLabel label_17 = new JLabel("           8");
+		label_17.setBounds(-12, 226, 46, 14);
+		contentPane.add(label_17);
+		
+		JLabel label_18 = new JLabel("       9");
+		label_18.setBounds(-2, 255, 46, 14);
+		contentPane.add(label_18);
+		
+		JLabel label_19 = new JLabel("        10");
+		label_19.setBounds(-12, 292, 46, 14);
+		contentPane.add(label_19);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setText("ORIZONTAL");
+		textArea.setFont(new Font("Arial Black", Font.BOLD, 10));
+		textArea.setBackground(SystemColor.control);
+		textArea.setBounds(490, 24, 76, 32);
+		contentPane.add(textArea);
+		
+		JTextPane textPane_100 = new JTextPane();
+		textPane_100.setText("1)Pasare ce traieste in Mexic,se hraneste cu serpi(pl).2)Leagan mobil pentru nou nascuti unde unele mamifere isi tin puiul.");
+		textPane_100.setBackground(SystemColor.control);
+		textPane_100.setBounds(489, 55, 349, 34);
+		contentPane.add(textPane_100);
+		
+		JTextPane textPane_102 = new JTextPane();
+		textPane_102.setText("5)S-a jucat prea mult cu focul-Un pui de oaie(fem).6)Sari ale acidului acetic.7)Cum sunt armasarii din caii obisnuiti -Strut ce  traieste in Australia.");
+		textPane_102.setBackground(SystemColor.control);
+		textPane_102.setBounds(491, 131, 347, 74);
+		contentPane.add(textPane_102);
+		
+		JTextPane textPane_103 = new JTextPane();
+		textPane_103.setText("8)Intins pe  asfalt-Mamifer rumegator din Tibet.9)Se refera la invatamant.10)Se intampla la moartea vinului(verb)-Un fel de camila taioasa.");
+		textPane_103.setBackground(SystemColor.control);
+		textPane_103.setBounds(489, 216, 349, 49);
+		contentPane.add(textPane_103);
+		
+		JTextArea txtrVertical = new JTextArea();
+		txtrVertical.setBackground(SystemColor.control);
+		txtrVertical.setFont(new Font("Arial Black", Font.BOLD, 11));
+		txtrVertical.setText("VERTICAL");
+		txtrVertical.setBounds(10, 306, 112, 32);
+		contentPane.add(txtrVertical);
+		
+		JTextPane txtpnanimalPionierceaMai = new JTextPane();
+		txtpnanimalPionierceaMai.setBackground(SystemColor.control);
+		txtpnanimalPionierceaMai.setText("1)Animal pionier-Cea mai joasa la rechinul doica! 2)Ca si coada castorului-Ajuns precum blana ursului polar.3)Familie de mamifere din care face parte ariciul(pl).");
+		txtpnanimalPionierceaMai.setBounds(10, 337, 574, 43);
+		contentPane.add(txtpnanimalPionierceaMai);
+		
+		JTextPane txtpnradascaDinResouun = new JTextPane();
+		txtpnradascaDinResouun.setBackground(SystemColor.control);
+		txtpnradascaDinResouun.setText("4)Radasca din resou!-Un cocos glumet.5)Turturea de culoare cenusie-bruna pe spate,cu o dunga neagra pe gat(pl).6)Se intampla unei publicatii dupa iesirea din tipar(verb)-Matca din munte!.");
+		txtpnradascaDinResouun.setBounds(10, 374, 574, 43);
+		contentPane.add(txtpnradascaDinResouun);
+		
+		JTextPane txtpnaInconjuraCu = new JTextPane();
+		txtpnaInconjuraCu.setBackground(SystemColor.control);
+		txtpnaInconjuraCu.setText("7)A inconjura cu o dunga de alta culoare!-Cap de termita-Coada de crocodil.8)Pasari in stare de latenta-Prin ea,fata exprima sentimente si idei.");
+		txtpnaInconjuraCu.setBounds(10, 417, 574, 36);
+		contentPane.add(txtpnaInconjuraCu);
+		
+		JTextPane txtpnpasariInStare = new JTextPane();
+		txtpnpasariInStare.setBackground(SystemColor.control);
+		txtpnpasariInStare.setText("8)Pasari in stare de latenta-Prin ea,fata exprima  sentimente si idei.9)Instrument prin care se imita trilul ciocarliei.-Meduza din  cuart! 10)Fluture daunator de culoare galena-cafenie care isi depune ouale pe  ramurile pomilor  fructiferi-Opinia unei ciori/");
+		txtpnpasariInStare.setBounds(10, 453, 574, 48);
+		contentPane.add(txtpnpasariInStare);
+		
+		JTextPane txtpnaApareaDin = new JTextPane();
+		txtpnaApareaDin.setBackground(SystemColor.control);
+		txtpnaApareaDin.setText("3)A aparea din senin-Orbita ochiului la animale sau la om(pl)4)Mod de organizare al pestilor care ne starneste  rasul(pl)-Capul unei albine.");
+		txtpnaApareaDin.setBounds(489, 98, 525, 32);
+		contentPane.add(txtpnaApareaDin);
+		 JButton generateButton = new JButton("Generate");
+	  
+	}
+}
